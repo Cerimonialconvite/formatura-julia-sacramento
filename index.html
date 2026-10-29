@@ -134,7 +134,7 @@
   </div>
 </div>
 <div id="brilho"></div>
-<audio id="musica" src="musica.mp3" preload="auto" loop></audio>
+<audio id="musica" preload="none" loop></audio>
 <button id="som" type="button" aria-label="Pausar música">
   <svg class="on" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>
   <svg class="off" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 10l4 4M21 10l-4 4"/></svg>
@@ -159,9 +159,9 @@
 <main id="convite" hidden>
   <div class="faixa" data-img="img/fundo1.jpg" data-y="0" data-h="1180" data-efeito="aquarela" style="background:#948F58" aria-label="Foto da Júlia de beca saindo de um envelope entre orquídeas">
   </div>
-  <div class="faixa" data-img="img/fundo1.jpg" data-y="1180" data-h="240" data-efeito="nenhum" style="background:#948F58" aria-label="Foram anos de dedicação, desafios e sonhos. Agora, é tempo de brindar à conquista.">
-    <img class="txt" src="img/t-frase1.png" alt="" style="left:10.37%;top:31.667%;width:78.796%">
-    <img class="txt" src="img/t-frase2.png" alt="" style="left:13.889%;top:59.583%;width:71.389%">
+  <div class="faixa" data-img="img/fundo1.jpg" data-y="1180" data-h="240" data-efeito="nenhum" style="background:#948F58" aria-label="No fim das contas, deu certo. Agora, vamos comemorar!">
+    <img class="txt" src="img/t-frase1.png" alt="" style="left:23.519%;top:31.25%;width:52.407%">
+    <img class="txt" src="img/t-frase2.png" alt="" style="left:25.648%;top:61.667%;width:48.611%">
   </div>
   <div class="faixa" data-img="img/fundo1.jpg" data-y="1420" data-h="640" data-efeito="fade" style="background:#948F58" aria-label="Brasão JS">
   </div>
@@ -249,7 +249,7 @@
   });
 
   /* música: começa no toque da capa */
-  var semMusica=false;
+  var semMusica=true; // sem música neste convite (para ligar: false + src="musica.mp3" no <audio>)
   musica.addEventListener('error',function(){ semMusica=true; som.classList.remove('ativo'); });
   function fadeIn(){ musica.volume=0; var v=0; var t=setInterval(function(){ v+=0.05; musica.volume=Math.min(v,0.85); if(v>=0.85) clearInterval(t); },150); }
   function tocar(){
